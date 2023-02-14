@@ -14,6 +14,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
 import { HardAndSoftSkillsComponent } from './components/hard-and-soft-skills/hard-and-soft-skills.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http'; /* Necesario para la conexion frontend y backend */ 
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { FooterComponent } from './components/footer/footer.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgCircleProgressModule.forRoot({})
+    NgCircleProgressModule.forRoot({}),
+    HttpClientModule /* Necesario para la conexion frontend y backend */
    ],
   providers: [],
   bootstrap: [AppComponent]
