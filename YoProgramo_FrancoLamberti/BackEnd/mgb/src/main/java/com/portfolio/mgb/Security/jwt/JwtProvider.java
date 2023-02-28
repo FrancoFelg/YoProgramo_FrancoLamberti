@@ -23,11 +23,11 @@ public class JwtProvider {
     @Value("${jwt.expiration}")
     private int expiration;
 
-    private String generateToken(Authentication authentication){
+    public String generateToken(Authentication authentication){
         UsuarioPrincipal usuarioPrincipal = (UsuarioPrincipal) authentication.getPrincipal();
         return Jwts.builder().setSubject(usuarioPrincipal.getUsername()).setIssuedAt(new Date())
                 .setExpiration( new Date(new Date().getTime()+expiration*1000) )
-                .signWith(SignatureAlgorithm.ES512, secret).compact();
+                .signWith(SignatureAlgorithm.HS256, secret).compact();
     }
 
     public String getNombreUsuarioFromToken(String token){

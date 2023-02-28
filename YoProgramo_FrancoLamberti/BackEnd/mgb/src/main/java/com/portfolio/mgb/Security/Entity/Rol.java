@@ -1,8 +1,9 @@
 package com.portfolio.mgb.Security.Entity;
 
 import com.portfolio.mgb.Security.Enums.RolNombre;
-import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
+import com.sun.istack.NotNull;
+
+import javax.persistence.*;
 
 @Entity
 public class Rol {

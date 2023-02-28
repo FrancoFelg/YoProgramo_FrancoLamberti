@@ -1,9 +1,9 @@
 package com.portfolio.mgb.Security.Entity;
 
 import com.portfolio.mgb.Security.Enums.RolNombre;
-import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
-
+import com.sun.istack.NotNull;
+import javax.persistence.*;
+import javax.persistence.Entity;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -27,6 +27,13 @@ public class Usuario {
 
     public Usuario(){
 
+    }
+
+    public Usuario(String nombre, String nombreUsuario, String email, String password) {
+        this.nombre = nombre;
+        this.nombreUsuario = nombreUsuario;
+        this.email = email;
+        this.password = password;
     }
 
     public Usuario(String nombre, String nombreUsuario, String email, String password, Set<Rol> roles) {
