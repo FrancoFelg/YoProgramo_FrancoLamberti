@@ -17,6 +17,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component'; /* Necesario para la conexion frontend y backend */ 
+import { FormsModule } from '@angular/forms';
+import { interceptorProvider, InterceptorService } from './service/interceptor-service';
 
 @NgModule({
   declarations: [
@@ -38,9 +40,12 @@ import { LoginComponent } from './components/login/login.component'; /* Necesari
     BrowserModule,
     AppRoutingModule,
     NgCircleProgressModule.forRoot({}),
-    HttpClientModule /* Necesario para la conexion frontend y backend */
-   ],
-  providers: [],
+    HttpClientModule /* Necesario para la conexion frontend y backend */,
+    FormsModule
+  ],
+  providers: [
+    interceptorProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
