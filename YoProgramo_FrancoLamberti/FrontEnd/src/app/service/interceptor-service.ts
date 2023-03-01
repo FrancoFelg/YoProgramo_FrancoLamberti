@@ -1,4 +1,4 @@
-import { HttpHandler, HttpRequest, HTTP_INTERCEPTORS } from "@angular/common/http";
+import { HttpEvent, HttpHandler, HttpRequest, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { TokenService } from "./token.service";
@@ -12,7 +12,7 @@ export class InterceptorService {
 
     }
 
-    intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<Any>>{
+    intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>>{
         let intReq = req;
         const token = this.tokenService.getToken();
         if(token != null){

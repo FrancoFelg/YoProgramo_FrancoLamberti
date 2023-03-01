@@ -19,6 +19,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component'; /* Necesario para la conexion frontend y backend */ 
 import { FormsModule } from '@angular/forms';
 import { interceptorProvider, InterceptorService } from './service/interceptor-service';
+import { NewExperienciaComponent } from './components/experiencia/new-experiencia.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { interceptorProvider, InterceptorService } from './service/interceptor-s
     ProyectosComponent,
     FooterComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    NewExperienciaComponent
   ],
   imports: [
     BrowserModule,
